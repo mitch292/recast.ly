@@ -2,8 +2,8 @@ class App extends React.Component {
   constructor(props) {
     super(props)
       this.state = {
-        videos: window.exampleVideoData,
-        video: window.exampleVideoData[0]
+        videos: exampleVideoData,
+        video: exampleVideoData[0]
       }
       this.onVideoClick = this.onVideoClick.bind(this)
       this.setState = this.setState.bind(this)

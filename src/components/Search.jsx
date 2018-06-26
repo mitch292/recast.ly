@@ -15,7 +15,6 @@ class SearchForm extends React.Component {
     }
   }
   render() {
-    let props = this.props
     return (
       <form onSubmit={(event) => {
         event.preventDefault()
@@ -30,7 +29,7 @@ class SearchForm extends React.Component {
           key: window.YOUTUBE_API_KEY
 
         }, (data) => {
-          props.newState({
+          this.props.newState({
             video: data.items[0],
             videos: data.items
           })
