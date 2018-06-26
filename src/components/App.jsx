@@ -6,6 +6,7 @@ class App extends React.Component {
         video: window.exampleVideoData[0]
       }
       this.onVideoClick = this.onVideoClick.bind(this)
+      this.setState = this.setState.bind(this)
     }
 
 
@@ -21,7 +22,7 @@ class App extends React.Component {
     return ( <div>
     <nav className="navbar">
       <div className="col-md-6 offset-md-3">
-    
+        <Search newState={this.setState}/>
       </div>
     </nav>
     <div className="row">
