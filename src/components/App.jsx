@@ -5,20 +5,31 @@ class App extends React.Component {
         videos: window.exampleVideoData,
         video: window.exampleVideoData[0]
       }
+      this.onVideoClick = this.onVideoClick.bind(this)
     }
+
+
+  onVideoClick(video) {
+    console.log("video we are passing ", video)
+    this.setState({
+      videos: window.exampleVideoData,
+      video: video
+    })
+  }
+
   render() {
     return ( <div>
     <nav className="navbar">
       <div className="col-md-6 offset-md-3">
-        <div><h5><em>search</em> view goes here</h5></div>
+    
       </div>
     </nav>
     <div className="row">
       <div className="col-md-7">
-        <div><h5><em>videoPlayer</em> <VideoPlayer video={this.state.video}/> </h5></div>
+        <VideoPlayer video={this.state.video}/> 
       </div>
       <div className="col-md-5">
-        <div><h5><em>videoList</em> <VideoList videos={this.state.videos} /></h5></div>
+         <VideoList onVideoClick={this.onVideoClick} videos={this.state.videos} />
       </div>
     </div>
   </div>
