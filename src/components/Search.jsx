@@ -13,13 +13,15 @@ class SearchForm extends React.Component {
     this.state = {
       userInput: ''
     }
-    console.log('setState binded from app', props.newState)
   }
   render() {
     let props = this.props
     return (
       <form onSubmit={(event) => {
         event.preventDefault()
+        this.setState({
+          userInput: ''
+        })
         searchYouTube({
           maxResults: '5',
           part: 'snippet',

@@ -11,10 +11,9 @@ class App extends React.Component {
 
 
   onVideoClick(video) {
-    console.log("video we are passing ", video)
     this.setState({
-      videos: window.exampleVideoData,
-      video: video
+      video: video,
+      videos: this.state.videos
     })
   }
 
